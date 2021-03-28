@@ -1,0 +1,41 @@
+//peticiones para empleados
+
+###
+GET   http://localhost:3000/
+
+###
+POST   http://localhost:3000/send-data
+Content-Type: application/json
+
+{
+    
+    "name":"Andita Mora", 
+    "email":"Andita@gmail.com",
+    "phone":"041299690527",
+    "picture":"somepicture",
+    "salary":"500",
+    "position":"peluquera"
+}
+
+###
+POST   http://localhost:3000/delete
+Content-Type: application/json
+
+{
+    "id":"606002010947d406c42a0fc3"
+   
+}
+
+###
+POST   http://localhost:3000/update
+Content-Type: application/json
+
+{
+    "id":"606002010947d406c42a0fc3",
+    "name":"Alicia ibete Mora Luzardo", 
+    "email":"Ali@gmail.com",
+    "phone":"041299690527",
+    "picture":"somepicture en chile",
+    "salary":"500",
+    "position":"peluquera"
+}

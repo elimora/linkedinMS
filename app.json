@@ -14,7 +14,7 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "assets/*"
     ],
     "ios": {
       "supportsTablet": true
@@ -23,7 +23,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+        
+      },
+      "package": "com.elimora.linkedin"
     },
     "web": {
       "favicon": "./assets/favicon.png"

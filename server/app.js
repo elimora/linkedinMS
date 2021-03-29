@@ -5,8 +5,11 @@ const mongoose=require('mongoose');
 const morgan=require('morgan')
 require('./model/Employee'); 
 
+//inpoprtar variables de entorno 
+
+
 app.use(express.json())
-app.use(morgan('dev')); 
+app.use(morgan('dev'));  
 
 const Employee=mongoose.model("employee");
 const mongoUri="mongodb+srv://cnq:6vnkYRVn1Ag20WC8@cluster0.d7l3l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
@@ -15,8 +18,9 @@ mongoose.connect(mongoUri,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }); 
+let i =1; 
 mongoose.connection.on("connected",()=>{
-    console.log("Conectado a mongo beibi")
+    console.log("Conectado a mongo beibi", i++)
 })
 
 mongoose.connection.on("error",(err)=>{
@@ -74,6 +78,8 @@ app.post('/update', async(req,res)=>{
     }
 }); 
 
-app.listen(3000, ()=>{
-    console.log('a la escucha en el puerto 3000')
+
+const port = process.env.PORT || 3000
+app.listen(port, ()=>{
+    console.log('a la escucha en el puerto',port)
 })

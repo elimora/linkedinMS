@@ -11,7 +11,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 const myOptions={
-  title:"Linkedin", 
+  title:"Mi Linkedin movil App", 
   headerTintColor:"white",
   headerStyle:{
     backgroundColor:"blue"
@@ -31,12 +31,12 @@ function App() {
         <Stack.Screen 
         name="Create"
         component={CreateEmployee}
-        options={{...myOptions,title:"Creando Empleado"}} 
+        options={{...myOptions,title:"Creando Mi prefil de Empleado"}} 
         />
         <Stack.Screen
         name="Profile" 
         component={Profile} 
-        options={{...myOptions,title:"Mi perfil Linkedin"}} 
+        options={{...myOptions,title:"Mi perfil de empleo Linkedin"}} 
         />
         {/* <Stack.Screen name="Welcome" component={Welcome} /> */}
     </Stack.Navigator>

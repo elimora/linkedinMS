@@ -8,7 +8,7 @@ const Home=({navigation})=>{
     const [loading,setLoading]=useState(true)
 
     const fetchData=()=>{
-        fetch("http://linkedinnew.herokuapp.com/")
+        fetch("https://miserverlinkedin.herokuapp.com/")
         .then(res=>res.json())
         .then(results=>{
             setData(results)

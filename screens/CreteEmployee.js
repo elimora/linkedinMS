@@ -42,7 +42,7 @@ const CreateEmployee=({navigation, route})=>{
     //host=linkedinnew.herokuapp.com
     //"http://10.0.2.2:3000/send-data"
     const submiData=()=>{ 
-        fetch("http://linkedinnew.herokuapp.com/send-data",{
+        fetch("https://miserverlinkedin.herokuapp.com/send-data",{
             method:"post",
             headers:{
                 'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const CreateEmployee=({navigation, route})=>{
         //linkedinnew.herokuapp.com
         //"http://10.0.2.2:3000/update"
     const updateDetails=()=>{
-        fetch("http://linkedinnew.herokuapp.com/update",{
+        fetch("https://miserverlinkedin.herokuapp.com/update",{
             method:"post",
             headers:{
                 'Content-Type': 'application/json'
@@ -113,7 +113,7 @@ const CreateEmployee=({navigation, route})=>{
                handleUpload(newfile)
             }
        } else{
-            Alert.alert("necesitas permiso para trabajar")
+            Alert.alert("Debes autorizarnos a para acceder a la galeria")
        }
     }
 

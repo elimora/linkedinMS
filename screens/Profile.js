@@ -8,7 +8,7 @@ const Profile =(props)=>{
     const {_id,name,picture, phone,salary,email,position}=props.route.params.item
     console.log(_id)
     const deleteEmployee=()=>{
-        fetch("http://linkedinnew.herokuapp.com/delete",{
+        fetch("https://miserverlinkedin.herokuapp.com/delete",{
             method:"post",
             headers:{
                 'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ const Profile =(props)=>{
                  mode="contained" 
                  theme={theme}
                  onPress={() => deleteEmployee()}>
-                    Despedido
+                    Descartar
                 </Button>
             </View>
        </View>

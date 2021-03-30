@@ -79,7 +79,7 @@ app.post('/update', async(req,res)=>{
 }); 
 
 
-const port = process.env.PORT || 3000
-app.listen(port, ()=>{
-    console.log('a la escucha en el puerto',port)
+app.set('port',process.env.PORT || 3000)
+app.listen(app.get('port'),()=>{
+    console.log(`servidor en el puerto ${app.get('port')}`)
 })

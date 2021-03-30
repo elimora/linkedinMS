@@ -8,7 +8,7 @@ const Profile =(props)=>{
     const {_id,name,picture, phone,salary,email,position}=props.route.params.item
     console.log(_id)
     const deleteEmployee=()=>{
-        fetch("http://10.0.2.2:3000/delete",{
+        fetch("http://linkedinnew.herokuapp.com/delete",{
             method:"post",
             headers:{
                 'Content-Type': 'application/json'

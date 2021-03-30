@@ -2,12 +2,13 @@ const express=require('express');
 const bodyParser = require('body-parser');
 const app=express(); 
 const mongoose=require('mongoose'); 
-const morgan=require('morgan')
+const morgan=require('morgan'); 
+const cors=require('cors')
 require('./model/Employee'); 
 
 //inpoprtar variables de entorno 
 
-
+app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'));  
 

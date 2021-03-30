@@ -39,8 +39,10 @@ const CreateEmployee=({navigation, route})=>{
     const [enableshift,setEnableshift]=useState(false)
 
     //este es el codigo para enviar al saervidor(inicio)
+    //host=linkedinnew.herokuapp.com
+    //"http://10.0.2.2:3000/send-data"
     const submiData=()=>{ 
-        fetch("http://10.0.2.2:3000/send-data",{
+        fetch("http://linkedinnew.herokuapp.com/send-data",{
             method:"post",
             headers:{
                 'Content-Type': 'application/json'
@@ -64,9 +66,10 @@ const CreateEmployee=({navigation, route})=>{
         })
         
     }
-
+        //linkedinnew.herokuapp.com
+        //"http://10.0.2.2:3000/update"
     const updateDetails=()=>{
-        fetch("http://10.0.2.2:3000/update",{
+        fetch("http://linkedinnew.herokuapp.com/update",{
             method:"post",
             headers:{
                 'Content-Type': 'application/json'

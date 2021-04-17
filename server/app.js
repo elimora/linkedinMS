@@ -1,10 +1,23 @@
 const express=require('express'); 
 const bodyParser = require('body-parser');
-const app=express(); 
 const mongoose=require('mongoose'); 
 const morgan=require('morgan'); 
 const cors=require('cors')
 require('./model/Employee'); 
+
+
+const productsRoutes=require('./routes/products.routes'); 
+const authRoutes=require('./routes/auth.routes');
+const micreateRoles = require('./libs/initialSetup');
+const userRoutes=require('./routes/user.routes')
+
+
+const app=express();
+
+micreateRoles.createRoles; 
+
+
+
 
 //inpoprtar variables de entorno 
 
@@ -13,6 +26,8 @@ app.use(express.json())
 app.use(morgan('dev'));  
 
 const Employee=mongoose.model("employee");
+
+
 const mongoUri="mongodb+srv://cnq:6vnkYRVn1Ag20WC8@cluster0.d7l3l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 mongoose.connect(mongoUri,{
@@ -27,6 +42,7 @@ mongoose.connection.on("connected",()=>{
 mongoose.connection.on("error",(err)=>{
     console.log("Error de connmexion =( ", err)
 })
+
 
 
 app.get('/',async(req,res)=>{
@@ -51,7 +67,7 @@ app.post('/send-data', async(req,res)=>{
     } catch (error) {
         console.log('Se prtesento el siguiente error al agragar',error)
     }
-}); 
+});   
 
 app.post('/delete',async (req,res)=>{
     try {
@@ -79,8 +95,14 @@ app.post('/update', async(req,res)=>{
     }
 }); 
 
+// seccion de rutas para la autenticacion y companias****
+app.use('/api/products',productsRoutes); 
+app.use('/api/auth',authRoutes); 
+app.use('/api/users',userRoutes); 
+// seccion de rutas para la autenticacion****
 
 app.set('port',process.env.PORT || 3000)
 app.listen(app.get('port'),()=>{
     console.log(`servidor en el puerto ${app.get('port')}`)
 })
+

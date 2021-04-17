@@ -56,3 +56,73 @@ Content-Type: application/json
     "salary":"500",
     "position":"peluquera"
 }
+//de aca en adelante se testearan las rutas de las companys
+
+###
+GET   http://localhost:3000/api/products
+
+###
+GET   http://localhost:3000/api/products/6070b8219ce7600fdcbf8e56
+
+###
+DELETE   http://localhost:3000/api/products/6077b279a8317d1c6044530d
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNzdiMjc5YTgzMTdkMWM2MDQ0NTMwZCIsImlhdCI6MTYxODYyMjU5MywiZXhwIjoxNjE4NzA4OTkzfQ.kXS5oU99RdyZugyRegcJJqJsKnVTEFt-pGblqnh2gTk
+###
+POST   http://localhost:3000/api/products
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNzdiMjc5YTgzMTdkMWM2MDQ0NTMwZCIsImlhdCI6MTYxODU5NjI3OCwiZXhwIjoxNjE4NjgyNjc4fQ.lNm5-1HXrrk-IyhCfzMf2NOL5YI2rVHdoCK_kwpTCnU
+
+{
+    "name":"TEXACO", 
+    "email":"texaco@tex.com",
+    "service":"Drilling and oil services",
+    "coutry":"USA",
+    "imgUrl":"http://1000marcas.net/wp-content/uploads/2020/11/Texaco-Logo.jpg"
+}
+
+###
+PUT   http://localhost:3000/api/products/6070b8219ce7600fdcbf8e56
+Content-Type: application/json
+
+{
+    "name":"HALLIBURTON International Trading C.A. ", 
+    "email":"halliburton@hb.com",
+    "service":"Drilling, exploration and Cementacion",
+    "coutry":"USA-KATAR-BEARING SEA-UNITED KINDONG",
+    "imgUrl":"https://mms.businesswire.com/media/20200717005449/es/806195/22/4494504_HAL_RGB.jpg"
+}
+
+//de aca en adelante se testearan las rutas de las autenticaciones
+
+###
+POST  http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+    "username":"marcos123", 
+    "email":"marcos123@gmail.com",
+    "password":"12345",
+    "roles":["admin"]
+
+}
+
+###
+POST  http://localhost:3000/api/auth/signin
+Content-Type: application/json
+
+{
+    "email":"david@gmail.com",
+    "password":"12345"
+
+}
+
+###
+POST  http://localhost:3000/api/users
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E1MjA0ZTk0NTQzMTRkYzY3OWQxYyIsImlhdCI6MTYxODYyOTE4NSwiZXhwIjoxNjE4NzE1NTg1fQ.Be4FKPRUKktSqrEegyNc46pDlPAAYXH7ijT6OBEC0Cw
+
+{
+    "username":"roly", 
+    "email":"roly@gmail.com",
+    "roles":["admin"]
+}

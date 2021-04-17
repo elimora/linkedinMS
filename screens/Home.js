@@ -22,7 +22,7 @@ const Home=({navigation})=>{
     },[])
 
     const renderList=((item)=>{
-        console.log('bitch 2')  
+        console.log('bandera de chequeo ok')  
         return(
             <Card style={styles.mycard} 
                 onPress={()=>navigation.navigate("Profile",{item})}
